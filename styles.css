@@ -1,0 +1,226 @@
+:root {
+    --solar-yellow: #FDB813;
+    --solar-orange: #FF7F00;
+    --solar-blue: #0077B6;
+    --solar-dark: #2C3E50;
+    --solar-light: #ECF0F1;
+    --solar-success: #27AE60;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: var(--solar-dark);
+    line-height: 1.6;
+}
+
+.solar-header {
+    background: linear-gradient(135deg, var(--solar-blue), var(--solar-dark));
+    color: white;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.sun-animation {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--solar-yellow), transparent 70%);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: pulse 8s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.1); opacity: 0.4; }
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.calculator-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid var(--solar-yellow);
+}
+
+.panel-icon {
+    font-size: 3rem;
+    color: var(--solar-yellow);
+    margin-bottom: 1rem;
+}
+
+.calculator-card h2 {
+    color: var(--solar-dark);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.solar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--solar-dark);
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--solar-yellow);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(253, 184, 19, 0.2);
+}
+
+.calculate-btn {
+    background: linear-gradient(to right, var(--solar-yellow), var(--solar-orange));
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(253, 184, 19, 0.4);
+}
+
+.result-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    border-top: 5px solid var(--solar-blue);
+}
+
+.result-card h3 {
+    color: var(--solar-dark);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    font-weight: 600;
+    color: var(--solar-dark);
+}
+
+.result-value {
+    font-weight: 700;
+    color: var(--solar-blue);
+}
+
+.sun-energy {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ddd;
+    color: var(--solar-orange);
+    font-size: 1.1rem;
+}
+
+.sun-energy i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.solar-footer {
+    background: var(--solar-dark);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+.solar-footer p {
+    margin: 0.3rem 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .calculator-card, .result-card {
+        padding: 1.5rem;
+    }
+}
