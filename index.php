@@ -42,10 +42,16 @@
             </form>
         </div>
 
-        <?php if (isset($tamInversor) || isset($pReal)): ?>
+        <?php if (isset($tamInversor) || isset($pReal) || isset($exception)): ?>
         <div class="result-card">
             <h3><i class="fas fa-chart-line"></i> Resultados do Dimensionamento</h3>
             
+            <?php if (isset($exception)): ?>
+                <div class="result-item">
+                    <span> <?php echo $exception . "<br>"; ?> </span>
+                </div>
+            <?php endif; ?>
+
             <?php if (isset($tamInversor)): ?>
                 <div class="result-item">
                     <span class="result-label">Tamanho do Inversor:</span>
@@ -56,7 +62,14 @@
             <?php if (isset($pReal) && is_numeric($pReal)): ?>
                 <div class="result-item">
                     <span class="result-label">Potência Real:</span>
-                    <span class="result-value"><?php echo (int)$pReal; ?> kWp</span>
+                    <span class="result-value"><?php echo "<span>± </span>" . (int)$pReal; ?> kWp</span>
+                </div>
+            <?php endif; ?>
+
+            <?php if (isset($quantModulo)): ?>
+                <div class="result-item">
+                    <span class="result-label">Quantidade de modulos de 610W:</span>
+                    <span class="result-value"><?php echo "<span>± </span>" . $quantModulo; ?></span>
                 </div>
             <?php endif; ?>
             
